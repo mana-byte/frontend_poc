@@ -18,3 +18,26 @@ def get_min_from_data(data: list[dict[str, int | str]], key: str):
         int: The minimum value found for the specified key.
     """
     return min(item[key] for item in data if key in item and isinstance(item[key], int))
+
+
+def fetch_data_from_api(api_url: str) -> list[dict[str, int | str]]:
+    """Fetch data from a given API URL.
+    Args:
+        api_url (str): The URL of the API to fetch data from.
+    Returns:
+        list[dict[str, int | str]]: The data fetched from the API.
+    """
+    import requests
+    import logging
+
+    # Configure logging
+    logging.basicConfig(level=logging.ERROR)
+    logger = logging.getLogger(__name__)
+    response = requests.get(api_url)
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as e:
+        print(f"Error fetching data from API: {e}")
+        logger.error(f"Error fetching data from API: {e}", exc_info=True)
+        return []
+    return response.json()

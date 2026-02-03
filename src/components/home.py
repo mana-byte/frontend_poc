@@ -13,7 +13,7 @@ default_data = [
 ]
 
 
-def home(id: str, data=default_data):
+def home(id: str, data: list[dict[str, int | str]] = default_data):
     return html.Div(
         [linechart(id=f"{id}-linechart", data=data)],
         className="home",
