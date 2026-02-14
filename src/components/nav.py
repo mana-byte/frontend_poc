@@ -1,39 +1,28 @@
 from dash import html
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
 
 def navbar(id: str):
     return html.Div(
         className="navbar-container",
         children=[
             # Logo/Brand
-            html.Div(
-                className="navbar-logo",
-                children="Data Dashboard",
-            ),
-            
+            html.Div(className="navbar-logo", children="DOIT"),
             # Navigation links
             html.Div(
                 className="nav-links",
                 children=[
-                    html.Button(
-                        className="nav-link",
-                        children=[
-                            html.Span("Home"),
-                            html.Span(""),
-                        ],
+                    dmc.Switch(
+                        offLabel=DashIconify(icon="radix-icons:moon", width=20),
+                        onLabel=DashIconify(icon="radix-icons:sun", width=20),
+                        size="xl",
+                        id="theme-switch"
                     ),
-                    html.Button(
+                    dmc.Anchor(
                         className="nav-link",
-                        children=[
-                            html.Span("Analytics"),
-                            html.Span(""),
-                        ],
-                    ),
-                    html.Button(
-                        className="nav-link",
-                        children=[
-                            html.Span("Settings"),
-                            html.Span(""),
-                        ],
+                        children=[DashIconify(icon="ion:logo-github", width=50)],
+                        href="https://github.com/mana-byte/frontend_poc",
                     ),
                 ],
             ),

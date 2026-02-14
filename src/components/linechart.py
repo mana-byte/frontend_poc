@@ -25,11 +25,11 @@ def linechart(id: str, data: list[dict[str, int | str]], key: str = "today"):
             "animationBegin": 500,
         },
         series=[
-            {"name": "today", "label": "Today", "color": "hsl(357 87% 52%)"},
+            {"name": "today", "label": "Today", "color": "#667eea"},
             {
                 "name": "yesterday",
                 "label": "Yesterday",
-                "color": "hsl(165 60% 69%)",
+                "color": "#764ba2",
             },
         ],
         className="graph",

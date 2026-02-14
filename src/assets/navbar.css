@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
   animation: slideDown 0.5s ease-out;
 }
 
@@ -26,6 +25,7 @@
   gap: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .navbar-logo:hover {

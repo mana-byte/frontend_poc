@@ -24,7 +24,7 @@
 /* Calendar day styling */
 .calendar-container .mantine-MiniCalendar-day {
   transition: all 0.2s ease !important;
-  border-radius: 50% !important;
+  border-radius: 30% !important;
 }
 
 .calendar-container .mantine-MiniCalendar-day:hover {
@@ -37,11 +37,3 @@
   color: white !important;
   transform: scale(1.1) !important;
 }
-
-/* /* Calendar selected date text */ */
-/* #mini-calendar-date { */
-/*   font-weight: 500 !important; */
-/*   color: #667eea !important; */
-/*   text-align: center !important; */
-/*   margin-top: 1rem !important; */
-/* } */
