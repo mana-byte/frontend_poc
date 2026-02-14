@@ -6,6 +6,8 @@ def get_max_from_data(data: list[dict[str, int | str]], key: str):
     Returns:
         int: The maximum value found for the specified key.
     """
+    if data == []:
+        return 0
     return max(item[key] for item in data if key in item and isinstance(item[key], int))
 
 
@@ -17,6 +19,8 @@ def get_min_from_data(data: list[dict[str, int | str]], key: str):
     Returns:
         int: The minimum value found for the specified key.
     """
+    if data == []:
+        return 0
     return min(item[key] for item in data if key in item and isinstance(item[key], int))
 
 

@@ -1,11 +1,12 @@
-from tabnanny import check
-from dash import Dash, html, callback, Output, Input
+from dash import Dash, callback, Output, Input
 import dash_mantine_components as dmc
 import components.nav as nav
 import components.home as home
 import components.slide_modal as slide_modal
+import os
 
 app = Dash()
+API_URL = os.getenv("API_URL", "http://localhost:8000/api/data")
 
 app.layout = dmc.MantineProvider(
     [

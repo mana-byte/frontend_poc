@@ -11,8 +11,9 @@ def calendar(id: str):
                 defaultDate=default_date, 
                 value=default_date, 
                 id="mini-calendar",
+                style={"margin": "20px"}
             ),
-            dmc.Text(id="mini-calendar-date", m="md"),
+            dmc.Text(id="mini-calendar-date", m="md", className="center"),
         ],
         className="calendar-container"
     )
