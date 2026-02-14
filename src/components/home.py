@@ -1,6 +1,8 @@
 from dash import html
 import dash_mantine_components as dmc
 from components.linechart import linechart
+from components.calendar import calendar
+from components.keypoints import keypoints
 
 default_data = [
     {"date": "09:00", "today": 80, "yesterday": 70},
@@ -15,7 +17,11 @@ default_data = [
 
 def home(id: str, data: list[dict[str, int | str]] = default_data):
     return html.Div(
-        [linechart(id=f"{id}-linechart", data=data)],
+        [
+            keypoints(id=f"{id}-keypoints", data=data),
+            linechart(id=f"{id}-linechart", data=data),
+            calendar(id=f"{id}-calendar"),
+        ],
         className="home",
         id=id,
     )

@@ -1,0 +1,47 @@
+.calendar-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.calendar-container:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.calendar-container:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* Calendar header styling */
+.calendar-container .mantine-MiniCalendar-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Calendar day styling */
+.calendar-container .mantine-MiniCalendar-day {
+  transition: all 0.2s ease !important;
+  border-radius: 50% !important;
+}
+
+.calendar-container .mantine-MiniCalendar-day:hover {
+  background-color: rgba(102, 126, 234, 0.1) !important;
+  transform: scale(1.1) !important;
+}
+
+.calendar-container .mantine-MiniCalendar-day[data-selected] {
+  background-color: #667eea !important;
+  color: white !important;
+  transform: scale(1.1) !important;
+}
+
+/* /* Calendar selected date text */ */
+/* #mini-calendar-date { */
+/*   font-weight: 500 !important; */
+/*   color: #667eea !important; */
+/*   text-align: center !important; */
+/*   margin-top: 1rem !important; */
+/* } */

@@ -5,6 +5,8 @@
   justify-content: center;
   height: 100vh;
   border-radius: 8px;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .center {
