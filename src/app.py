@@ -6,7 +6,9 @@ import components.slide_modal as slide_modal
 import os
 
 app = Dash()
-API_URL = os.getenv("API_URL", "http://localhost:8000/api/data")
+API_URL = os.getenv("API_URL", "http://localhost:6942/")
+API_ROUTE_TODAY = os.getenv("API_ROUTE", "get_today")
+API_ROUTE_YESTERDAY = os.getenv("API_ROUTE", "get_yesterday")
 
 app.layout = dmc.MantineProvider(
     [
@@ -23,7 +25,7 @@ app.layout = dmc.MantineProvider(
 @callback(
     Output("mantine-provider", "forceColorScheme"), Input("theme-switch", "checked")
 )
-def toggle_theme(checked):
+def toggle_theme(checked) -> str:
     return "light" if checked else "dark"
 
 
@@ -31,7 +33,7 @@ def toggle_theme(checked):
     Output("charm:chevrons-up", "color"),
     Input("theme-switch", "checked"),
 )
-def icon_color(checked):
+def icon_color(checked) -> str:
     return "#000" if checked else "#fff"
 
 

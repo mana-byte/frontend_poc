@@ -3,7 +3,13 @@ import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 
-def navbar(id: str):
+def navbar(id: str) -> html.Div:
+    """Creates a navigation bar component using Dash HTML and Dash Mantine Components.
+    Args:
+        id (str): The unique identifier for the navbar component.
+    Returns:
+        html.Div: A Dash HTML Div containing the navigation bar with a logo and navigation links.
+    """
     return html.Div(
         className="navbar-container",
         children=[
@@ -17,11 +23,15 @@ def navbar(id: str):
                         offLabel=DashIconify(icon="radix-icons:moon", width=20),
                         onLabel=DashIconify(icon="radix-icons:sun", width=20),
                         size="xl",
-                        id="theme-switch"
+                        id="theme-switch",
                     ),
                     dmc.Anchor(
                         className="nav-link",
-                        children=[DashIconify(id="ion:logo-github" ,icon="ion:logo-github", width=50)],
+                        children=[
+                            DashIconify(
+                                id="ion:logo-github", icon="ion:logo-github", width=50
+                            )
+                        ],
                         href="https://github.com/mana-byte/frontend_poc",
                     ),
                 ],

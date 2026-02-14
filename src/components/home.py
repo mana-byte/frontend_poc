@@ -15,7 +15,14 @@ default_data = [
 ]
 
 
-def home(id: str, data: list[dict[str, int | str]] = default_data):
+def home(id: str, data: list[dict[str, int | str]] = default_data) -> html.Div:
+    """Groups all of the main data components together into a single layout
+    Args:
+        id (str): The unique identifier for the home component.
+        data (list[dict[str, int | str]], optional): The data to be displayed
+    Returns:
+        html.Div: A Dash HTML Div containing the keypoints, linechart, and calendar components.
+    """
     return html.Div(
         [
             keypoints(id=f"{id}-keypoints", data=data),

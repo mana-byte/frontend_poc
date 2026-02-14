@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 from utils import get_max_from_data, get_min_from_data
 
 
-def linechart(id: str, data: list[dict[str, int | str]], key: str = "today"):
+def linechart(id: str, data: list[dict[str, int | str]], key: str = "today") -> dmc.LineChart:
     return dmc.LineChart(
         h=300,
         strokeWidth=4,

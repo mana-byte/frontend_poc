@@ -3,19 +3,25 @@ from dash import callback, Input, Output
 from datetime import datetime
 
 
-def calendar(id: str):
-    default_date = datetime.today().strftime('%Y-%m-%d')
+def calendar(id: str) -> dmc.Stack:
+    """Creates a calendar component using Dash Mantine Components.
+    Args:
+        id (str): The unique identifier for the calendar component.
+    Returns:
+        dmc.Stack: A Dash Mantine Stack containing the calendar and a text element to display the selected date.
+    """
+    default_date = datetime.today().strftime("%Y-%m-%d")
     return dmc.Stack(
         [
             dmc.MiniCalendar(
-                defaultDate=default_date, 
-                value=default_date, 
+                defaultDate=default_date,
+                value=default_date,
                 id="mini-calendar",
-                style={"margin": "20px"}
+                style={"margin": "20px"},
             ),
-            dmc.Text(id="mini-calendar-date", m="md", className="center"),
+            dmc.Text(id="mini-calendar-date", m="md"),
         ],
-        className="calendar-container"
+        className="calendar-container",
     )
 
 

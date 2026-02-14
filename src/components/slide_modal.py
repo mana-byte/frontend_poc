@@ -1,9 +1,16 @@
-from dash import html, Input, Output, State, callback
+from dash import html, Input, Output, callback
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 
-def slide_modal(id: str):
+def slide_modal(id: str) -> html.Div:
+    """Creates a slide-up modal component using Dash HTML, Dash Mantine Components, and Dash Iconify.
+    Args:
+        id (str): The unique identifier for the slide modal component.
+    Returns:
+        html.Div: A Dash HTML Div containing a button to open the modal and the modal itself with an image.
+
+    """
     return html.Div(
         [
             html.Div(
