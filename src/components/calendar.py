@@ -1,5 +1,4 @@
 import dash_mantine_components as dmc
-from dash import callback, Input, Output
 from datetime import datetime
 
 
@@ -18,8 +17,9 @@ def calendar(id: str) -> dmc.Stack:
                 value=default_date,
                 id="mini-calendar",
                 style={"margin": "20px"},
+                numberOfDays=9,
+                locale="fr",
             ),
-            dmc.Text(id="mini-calendar-date", m="md"),
         ],
         className="calendar-container",
     )

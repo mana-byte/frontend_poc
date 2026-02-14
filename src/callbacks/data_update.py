@@ -18,7 +18,8 @@ def calendar_update(date: str):
     Returns:
         dict: The data fetched from the API for the selected date
     """
-    data = fetch_data_from_api_by_date(API_URL + API_ROUTE_BY_DAY, date)
+    data = fetch_data_from_api_by_date(API_URL + API_ROUTE_BY_DAY, date)[::-1]
+    data.append({"date": date})
     return data
 
 
@@ -38,7 +39,8 @@ def update_visualization(data):
 )
 def update_current_nb_keypoint(data):
     """Updates the line chart visualization based on the data stored in the data store"""
-    return data[-1:][0]["nb_people"] if data else "No data"
+    # -1 is the date, -2 is the latest data point
+    return data[-2:][0]["nb_people"] if len(data) > 1 else "No data"
 
 
 @callback(
@@ -47,4 +49,4 @@ def update_current_nb_keypoint(data):
 )
 def update_max_nb_keypoint(data):
     """Updates the line chart visualization based on the data stored in the data store"""
-    return get_max_from_data(data, "nb_people") if data else "No data"
+    return get_max_from_data(data, "nb_people") if len(data) > 1 else "No data"

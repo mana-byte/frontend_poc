@@ -1,10 +1,11 @@
-from dash import Dash, callback, Output, Input, dcc
+from dash import Dash, dcc
 import dash_mantine_components as dmc
 
 import components.nav as nav
 import components.home as home
 import components.slide_modal as slide_modal
 
+# Required callbacks to make the app work
 import callbacks.theme
 import callbacks.data_update
 
@@ -13,8 +14,7 @@ app = Dash()
 app.layout = dmc.MantineProvider(
     [
         # data store
-        dcc.Store(id="data-store", data={}),
-
+        dcc.Store(id="data-store"),
         # Website
         nav.navbar(id="navbar-component"),
         home.home(id="home-component"),

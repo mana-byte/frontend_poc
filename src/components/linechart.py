@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
 from utils import get_max_from_data, get_min_from_data
+from datetime import datetime, timedelta
 
 
 def linechart(
@@ -29,8 +30,17 @@ def linechart(
             "animationBegin": 1000,
         },
         series=[
-            {"name": "nb_people", "label": "Today", "color": "#667eea"},
+            {"name": "nb_people", "label": "Nombre de personnes", "color": "#667eea"},
         ],
         className="graph",
         id="linechart",
     )
+
+def format_datetime(date: str) -> str:
+    today = datetime.today().strftime("%Y-%m-%d")
+    if date == today:
+        return "Aujourd'hui"
+    if date == (datetime.today() - timedelta(days=1)).strftime("%Y-%m-%d"):
+        return "Hier"
+    else:
+        return datetime.strptime(date, "%Y-%m-%d").strftime("%d %B %Y")

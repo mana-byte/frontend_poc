@@ -7,9 +7,8 @@ from components.keypoints import keypoints
 default_data = [
     {"time": "09:00", "nb_people": 100},
     {"time": "10:00", "nb_people": 120},
-    {"time": "11:00", "nb_people": 130},
+    {"time": "11:00", "nb_people": 69},
 ]
-
 
 def home(id: str, data: list[dict[str, int | str]] = default_data) -> html.Div:
     """Groups all of the main data components together into a single layout
