@@ -22,7 +22,7 @@ def linechart(id: str, data: list[dict[str, int | str]], key: str = "today"):
             "isAnimationActive": True,
             "animationDuration": 1000,
             "animationEasing": "ease-in-out",
-            "animationBegin": 500,
+            "animationBegin": 1000,
         },
         series=[
             {"name": "today", "label": "Today", "color": "#667eea"},

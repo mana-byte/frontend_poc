@@ -8,7 +8,14 @@ def slide_modal(id: str):
         [
             html.Div(
                 dmc.Button(
-                    [DashIconify(icon="charm:chevrons-up", width=30)],
+                    [
+                        DashIconify(
+                            id="charm:chevrons-up",
+                            icon="charm:chevrons-up",
+                            width=30,
+                            color="white",
+                        )
+                    ],
                     id="open-modal",
                     className="bottom-button",
                 ),

@@ -21,7 +21,7 @@ def navbar(id: str):
                     ),
                     dmc.Anchor(
                         className="nav-link",
-                        children=[DashIconify(icon="ion:logo-github", width=50)],
+                        children=[DashIconify(id="ion:logo-github" ,icon="ion:logo-github", width=50)],
                         href="https://github.com/mana-byte/frontend_poc",
                     ),
                 ],

@@ -1,3 +1,4 @@
+from tabnanny import check
 from dash import Dash, html, callback, Output, Input
 import dash_mantine_components as dmc
 import components.nav as nav
@@ -22,7 +23,15 @@ app.layout = dmc.MantineProvider(
     Output("mantine-provider", "forceColorScheme"), Input("theme-switch", "checked")
 )
 def toggle_theme(checked):
-    return "dark" if not checked else "light"
+    return "light" if checked else "dark"
+
+
+@callback(
+    Output("charm:chevrons-up", "color"),
+    Input("theme-switch", "checked"),
+)
+def icon_color(checked):
+    return "#000" if checked else "#fff"
 
 
 if __name__ == "__main__":
