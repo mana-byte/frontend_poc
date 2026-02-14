@@ -20,7 +20,7 @@ def keypoints(
                 dmc.Card(
                     [
                         dmc.Text("Actuellement", size="xs"),
-                        dmc.Text(f"{data[-1:][0]['nb_people']}", size="xl"),
+                        dmc.Text(id="current_nb_text" ,children=f"{data[-1:][0]['nb_people']}", size="xl"),
                     ],
                     withBorder=True,
                     shadow="sm",
@@ -31,7 +31,7 @@ def keypoints(
                 dmc.Card(
                     [
                         dmc.Text("Maximum", size="xs"),
-                        dmc.Text(f"{max_value}", size="xl"),
+                        dmc.Text(id="max_nb_text" ,children=f"{max_value}", size="xl"),
                     ],
                     withBorder=True,
                     shadow="sm",
