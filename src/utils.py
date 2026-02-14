@@ -45,3 +45,29 @@ def fetch_data_from_api(api_url: str) -> list[dict[str, int | str]]:
         logger.error(f"Error fetching data from API: {e}", exc_info=True)
         return []
     return response.json()
+
+
+def fetch_data_from_api_by_date(api_url: str, date: str) -> list[dict[str, int | str]]:
+    """Fetch data from a given API URL for a specific date.
+    Args:
+        api_url (str): The URL of the API to fetch data from.
+        date (str): The date to filter the data by (in YYYY-MM-DD format).
+    Returns:
+        list[dict[str, int | str]]: The data fetched from the API for the specified date.
+    """
+    import requests
+    import logging
+
+    # Configure logging
+    logging.basicConfig(level=logging.ERROR)
+    logger = logging.getLogger(__name__)
+    response = requests.get(api_url)
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as e:
+        print(f"Error fetching data from API: {e}")
+        logger.error(f"Error fetching data from API: {e}", exc_info=True)
+        return []
+    data = response.json()
+    filtered_data = [item for item in data if item.get("date") == date]
+    return filtered_data
