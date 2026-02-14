@@ -15,9 +15,6 @@ def linechart(
         # Disable axes
         withXAxis=False,
         withYAxis=False,
-        yAxisProps={
-            "domain": [get_min_from_data(data, key), get_max_from_data(data, key)]
-        },
         # Legend
         legendProps={"verticalAlign": "bottom"},
         withLegend=True,
