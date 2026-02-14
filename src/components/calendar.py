@@ -17,7 +17,7 @@ def calendar(id: str) -> dmc.Stack:
                 value=default_date,
                 id="mini-calendar",
                 style={"margin": "20px"},
-                numberOfDays=9,
+                numberOfDays=5,
                 locale="fr",
             ),
         ],

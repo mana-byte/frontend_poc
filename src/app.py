@@ -1,4 +1,4 @@
-from dash import Dash, dcc
+from dash import Dash, dcc, html
 import dash_mantine_components as dmc
 
 import components.nav as nav
@@ -11,17 +11,20 @@ import callbacks.data_update
 
 app = Dash()
 
-app.layout = dmc.MantineProvider(
-    [
-        # data store
-        dcc.Store(id="data-store"),
-        # Website
-        nav.navbar(id="navbar-component"),
-        home.home(id="home-component"),
-        slide_modal.slide_modal(id="slide-modal-component"),
-    ],
-    forceColorScheme="light",
-    id="mantine-provider",
+app.layout = html.Div(
+    dmc.MantineProvider(
+        [
+            # data store
+            dcc.Store(id="data-store"),
+            # Website
+            nav.navbar(id="navbar-component"),
+            home.home(id="home-component"),
+            slide_modal.slide_modal(id="slide-modal-component"),
+        ],
+        forceColorScheme="light",
+        id="mantine-provider",
+    ),
+    id="app-container",
 )
 
 if __name__ == "__main__":
