@@ -25,9 +25,3 @@ def calendar(id: str) -> dmc.Stack:
     )
 
 
-@callback(
-    Output("mini-calendar-date", "children"),
-    Input("mini-calendar", "value"),
-)
-def update(d):
-    return f"You selected: {d}"

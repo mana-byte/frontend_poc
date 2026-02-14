@@ -61,13 +61,11 @@ def fetch_data_from_api_by_date(api_url: str, date: str) -> list[dict[str, int |
     # Configure logging
     logging.basicConfig(level=logging.ERROR)
     logger = logging.getLogger(__name__)
-    response = requests.get(api_url)
+    response = requests.post(api_url, json={"date": date})
     try:
         response.raise_for_status()
     except requests.HTTPError as e:
         print(f"Error fetching data from API: {e}")
         logger.error(f"Error fetching data from API: {e}", exc_info=True)
         return []
-    data = response.json()
-    filtered_data = [item for item in data if item.get("date") == date]
-    return filtered_data
+    return response.json()
