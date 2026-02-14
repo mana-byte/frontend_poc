@@ -3,7 +3,7 @@ from utils import get_max_from_data, get_min_from_data
 
 
 def keypoints(
-    id: str, data: list[dict[str, int | str]], key: str = "today"
+    id: str, data: list[dict[str, int | str]], key: str = "nb_people"
 ) -> dmc.Group:
     """Creates cards based on given data giving the maximum and current values
     Args:
@@ -15,13 +15,12 @@ def keypoints(
     """
     if data and key in data[0]:
         max_value = get_max_from_data(data, key)
-        min_value = get_min_from_data(data, key)
         return dmc.Group(
             [
                 dmc.Card(
                     [
                         dmc.Text("Actuellement", size="xs"),
-                        dmc.Text(f"{min_value}", size="xl"),
+                        dmc.Text(f"{data[-1:][0]['nb_people']}", size="xl"),
                     ],
                     withBorder=True,
                     shadow="sm",
@@ -47,4 +46,4 @@ def keypoints(
             id=id,
         )
     else:
-        return dmc.Text("No data available", color="red")
+        return dmc.Text("No data available")

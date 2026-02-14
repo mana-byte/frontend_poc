@@ -2,17 +2,21 @@ import dash_mantine_components as dmc
 from utils import get_max_from_data, get_min_from_data
 
 
-def linechart(id: str, data: list[dict[str, int | str]], key: str = "today") -> dmc.LineChart:
+def linechart(
+    id: str, data: list[dict[str, int | str]], key: str = "nb_people"
+) -> dmc.LineChart:
     return dmc.LineChart(
         h=300,
         strokeWidth=4,
         # Data
-        dataKey="date",
+        dataKey="time",
         data=data,
         # Disable axes
         withXAxis=False,
         withYAxis=False,
-        yAxisProps={"domain": [get_min_from_data(data, key), get_max_from_data(data, key)]},
+        yAxisProps={
+            "domain": [get_min_from_data(data, key), get_max_from_data(data, key)]
+        },
         # Legend
         legendProps={"verticalAlign": "bottom"},
         withLegend=True,
@@ -25,12 +29,7 @@ def linechart(id: str, data: list[dict[str, int | str]], key: str = "today") -> 
             "animationBegin": 1000,
         },
         series=[
-            {"name": "today", "label": "Today", "color": "#667eea"},
-            {
-                "name": "yesterday",
-                "label": "Yesterday",
-                "color": "#764ba2",
-            },
+            {"name": "nb_people", "label": "Today", "color": "#667eea"},
         ],
         className="graph",
         id="linechart",

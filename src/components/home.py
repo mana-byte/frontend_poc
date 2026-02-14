@@ -5,13 +5,9 @@ from components.calendar import calendar
 from components.keypoints import keypoints
 
 default_data = [
-    {"date": "09:00", "today": 80, "yesterday": 70},
-    {"date": "10:00", "today": 100, "yesterday": 90},
-    {"date": "11:00", "today": 120, "yesterday": 110},
-    {"date": "12:00", "today": 150, "yesterday": 130},
-    {"date": "13:00", "today": 160, "yesterday": 140},
-    {"date": "14:00", "today": 180, "yesterday": 150},
-    {"date": "15:00", "today": 170, "yesterday": 160},
+    {"time": "09:00", "nb_people": 100},
+    {"time": "10:00", "nb_people": 120},
+    {"time": "11:00", "nb_people": 130},
 ]
 
 
