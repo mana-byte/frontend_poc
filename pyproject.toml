@@ -6,6 +6,7 @@ authors = [ ]
 requires-python = ">=3.13"
 dependencies = [
     "dash>=3.4.0",
+    "dash-iconify>=0.1.2",
     "dash-mantine-components>=2.5.1",
     "pandas>=3.0.0",
     "plotly>=6.5.2",

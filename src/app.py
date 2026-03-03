@@ -1,13 +1,16 @@
 from dash import Dash, dcc, html
 import dash_mantine_components as dmc
+import os
 
 import components.nav as nav
 import components.home as home
 import components.slide_modal as slide_modal
 
-# Required callbacks to make the app work
+# for themes
 import callbacks.theme
 import callbacks.data_update
+
+PORT = int(os.environ.get("PORT", 8050))
 
 app = Dash()
 
@@ -28,4 +31,4 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=PORT)

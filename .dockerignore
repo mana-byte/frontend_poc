@@ -1,0 +1,37 @@
+# Ignore git directory
+.git
+.gitignore
+
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore build and distribution directories
+build/
+dist/
+
+# Ignore coverage and test reports
+.coverage
+*.cover
+htmlcov/
+
+# Ignore local development files
+*.swp
+*.swo
+
+# Ignore Docker-related files that shouldn't be copied
+Dockerfile
+.dockerignore
+
+# Ignore dependency lock files (they're handled by uv sync)
+uv.lock
