@@ -3,7 +3,7 @@ from utils import fetch_data_from_api_by_date, get_max_from_data
 import os
 
 API_URL = os.getenv("API_URL", "http://localhost:6942/")
-API_ROUTE_BY_DAY = os.getenv("API_ROUTE", "people_per_hour")
+API_ROUTE_BY_DAY = os.getenv("API_ROUTE", "get_day")
 
 
 # FEtCH DATA CALLBACKS
@@ -19,7 +19,7 @@ def calendar_update(date: str):
         dict: The data fetched from the API for the selected date
     """
     data = fetch_data_from_api_by_date(API_URL + API_ROUTE_BY_DAY, date)
-    return data
+    return data[::-1]
 
 
 # DATA UPDATE CALLBACKS
