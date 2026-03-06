@@ -8,8 +8,10 @@ dependencies = [
     "dash>=3.4.0",
     "dash-iconify>=0.1.2",
     "dash-mantine-components>=2.5.1",
+    "flask>=3.1.2",
     "pandas>=3.0.0",
     "plotly>=6.5.2",
     "pytest>=9.0.2",
     "requests>=2.32.5",
+    "uvicorn>=0.41.0",
 ]

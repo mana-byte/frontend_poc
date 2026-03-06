@@ -12,7 +12,7 @@ import callbacks.data_update
 
 PORT = int(os.environ.get("PORT", 8050))
 
-app = Dash()
+app = Dash(__name__)
 
 app.layout = html.Div(
     dmc.MantineProvider(
@@ -29,6 +29,5 @@ app.layout = html.Div(
     ),
     id="app-container",
 )
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT)

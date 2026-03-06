@@ -2,7 +2,7 @@ from dash import callback, Output, Input
 from utils import fetch_data_from_api_by_date, get_max_from_data
 import os
 
-API_URL = os.getenv("API_URL", "http://localhost:6942/")
+API_URL = os.getenv("API_URL", "http://0.0.0.0:6942/")
 API_ROUTE_BY_DAY = os.getenv("API_ROUTE", "get_day")
 
 
