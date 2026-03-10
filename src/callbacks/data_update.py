@@ -1,5 +1,5 @@
 from dash import callback, Output, Input
-from utils import fetch_data_from_api_by_date, get_max_from_data
+from utils import fetch_data_from_api_by_date, get_max_from_data, format_data_for_linechart
 import os
 
 API_URL = os.getenv("API_URL", "http://0.0.0.0:6942/")
@@ -29,7 +29,7 @@ def calendar_update(date: str):
 )
 def update_visualization(data):
     """Updates the line chart visualization based on the data stored in the data store"""
-    return data
+    return format_data_for_linechart(data, "nb_people") if data else []
 
 
 @callback(

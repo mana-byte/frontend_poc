@@ -2,7 +2,6 @@ import dash_mantine_components as dmc
 from utils import get_max_from_data, get_min_from_data
 from datetime import datetime, timedelta
 
-
 def linechart(
     id: str, data: list[dict[str, int | str]], key: str = "nb_people"
 ) -> dmc.LineChart:
@@ -27,7 +26,8 @@ def linechart(
             "animationBegin": 1000,
         },
         series=[
-            {"name": "nb_people", "label": "Nombre de personnes", "color": "#667eea"},
+            {"name": "wifi", "label": "Nombre de personnes selon Wifi", "color": "#667eea"},
+            {"name": "photo", "label": "Nombre de personnes selon photo", "color": "#66eaa8"},
         ],
         className="graph",
         id="linechart",
