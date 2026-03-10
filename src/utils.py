@@ -70,7 +70,10 @@ def fetch_data_from_api_by_date(api_url: str, date: str) -> list[dict[str, int |
         return []
     return response.json()
 
-def format_data_for_linechart(data: list[dict[str, int | str]], key: str) -> list[dict[str | int, int | str]]:
+
+def format_data_for_linechart(
+    data: list[dict[str, int | str]], key: str
+) -> list[dict[str | int, int | str]]:
     """Format data for use in a line chart by extracting the relevant key and time.
     Args:
         data (list[dict[str, int | str]]): The original data to be formatted.
@@ -78,7 +81,12 @@ def format_data_for_linechart(data: list[dict[str, int | str]], key: str) -> lis
     Returns:
         list[dict[str, int | str]]: The formatted data for the line chart.
     """
-    return [{"time": item["time"], item["source"]: item[key]} for item in data if key in item and "time" in item]
+    return [
+        {"time": item["time"], item["source"]: item[key]}
+        for item in data
+        if key in item and "time" in item
+    ]
+
 
 if __name__ == "__main__":
     data = fetch_data_from_api_by_date("http://localhost:6942/get_day", "2026-03-10")
